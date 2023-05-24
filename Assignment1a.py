@@ -1,3 +1,4 @@
+# Function to add two large numbers
 def adding_bignum(a, b):
     while len(a) > len(b):
         b = "0" + b
@@ -18,7 +19,7 @@ def adding_bignum(a, b):
 
     return res
 
-
+# Function to subtract one large number from another
 def subtracting_bignum(a, b):
     while len(a) > len(b):
         b = "0" + b
@@ -47,7 +48,7 @@ def subtracting_bignum(a, b):
         res = res[1:]
     return res
 
-
+# Function to multiply two large numbers
 def multi_bignum_bignum(a, b):
     zeros = ""
     res = ""
@@ -57,7 +58,7 @@ def multi_bignum_bignum(a, b):
         res = adding_bignum(res, temp)
     return res
 
-
+# Function to multiply a large number by a single-digit number
 def multi_bignum_digit(st, a):
     temp = 0
     res = ""
@@ -67,7 +68,7 @@ def multi_bignum_digit(st, a):
         res = str(multi % 10) + res
     return res
 
-
+# The function to calculate the quotient of a large number divided by a number not bignum
 def div_bignum(st, a):
     number = 0
     res = ""
@@ -79,7 +80,7 @@ def div_bignum(st, a):
         res = res[1:]
     return res
 
-
+# The function to calculate the modulo of a large number divided by a number not bignum
 def mod_bignum(st, a):
     number = 0
     res = ""
@@ -89,13 +90,14 @@ def mod_bignum(st, a):
 
     return number
 
+# Main
+if "__main__"==__name__:
+    while True:
+        number1 = input("Number 1:")
+        number2 = input("Number 2:")
+        if number1.isdecimal() and number2.isdecimal():
+            break
+        else:
+            print("Your type of input not match !!!")
 
-while True:
-    number1 = input("Number 1:")
-    number2 = input("Number 2:")
-    if number1.isdecimal() and number2.isdecimal():
-        break
-    else:
-        print("Your type of input not match !!!")
-
-print(mod_bignum(number1, int(number2)))
+    print(mod_bignum(number1, int(number2)))
