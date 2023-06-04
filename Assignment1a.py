@@ -56,7 +56,9 @@ def multi_bignum_bignum(a, b):
         temp = multi_bignum_digit(a, int(b[i])) + zeros
         zeros += "0"
         res = adding_bignum(res, temp)
+    
     return res
+
 
 # Function to multiply a large number by a single-digit number
 def multi_bignum_digit(st, a):
@@ -66,6 +68,8 @@ def multi_bignum_digit(st, a):
         multi = int(st[i]) * a + temp
         temp = multi // 10
         res = str(multi % 10) + res
+    if temp > 0:
+        res = str(temp) + res
     return res
 
 # The function to calculate the quotient of a large number divided by a number not bignum
@@ -100,4 +104,4 @@ if "__main__"==__name__:
         else:
             print("Your type of input not match !!!")
 
-    print(mod_bignum(number1, int(number2)))
+    print(multi_bignum_bignum(number1, number2))
